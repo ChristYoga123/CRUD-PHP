@@ -43,26 +43,26 @@ if(isset($_POST["submit"])) {
     <form action="" method="post" enctype="multipart/form-data">
         <ul>
             <!-- membuat input hidden lalu dipost agar array dari id ini masuk ke function -->
-            <input type="hidden" name="id" value="<?=$mhs['id_produk']?>">
+            <input type="hidden" name="id_produk" value="<?=$mhs['id_produk']?>">
             <li>
                 <label for="Nama">Nama: </label>
-                <input type="text" name="Nama" id="Nama" required value="<?=$mhs['nama_produk']?>">
+                <input type="text" name="nama_produk" id="Nama" required value="<?=$mhs['nama_produk']?>">
             </li>
             <li>
                 <label for="NIM">Desk: </label>
-                <input type="text" name="NIM" id="NIM" required value="<?=$mhs['deskripsi']?>">
+                <input type="text" name="deskripsi" id="NIM" required value="<?=$mhs['deskripsi']?>">
             </li>
             <li>
                 <label for="Jurusan">Harga: </label>
-                <input type="text" name="Jurusan" id="Jurusan" required value="<?=$mhs['harga']?>">
+                <input type="text" name="harga" id="Jurusan" required value="<?=$mhs['harga']?>">
             </li>
             <li>
                 <label for="Jurusan">Warna: </label>
-                <input type="text" name="Jurusan" id="Jurusan" required value="<?=$mhs['warna']?>">
+                <input type="text" name="warna" id="Jurusan" required value="<?=$mhs['warna']?>">
             </li>
             <li>
                 <label for="Jurusan">Ukuran: </label>
-                <input type="text" name="Jurusan" id="Jurusan" required value="<?=$mhs['ukuran']?>">
+                <input type="text" name="ukuran" id="Jurusan" required value="<?=$mhs['ukuran']?>">
             </li>
             <li>
                 <label for="Gambar">Gambar: </label>
