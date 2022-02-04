@@ -68,7 +68,7 @@ if(isset($_POST["cari"])) {
             <td><?= $mhs["harga"]; ?></td>
             <td><?= $mhs["warna"]; ?></td>
             <td><?= $mhs["ukuran"]; ?></td>
-            <td><?= $mhs["Gambar"]; ?></td>
+            <td><img src="./img/<?=$mhs["Gambar"];?>" alt=""></td>
         </tr>
         <?php 
         $i++;
