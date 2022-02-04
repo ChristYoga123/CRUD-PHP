@@ -2,7 +2,7 @@
 require "fungsi.php";
 // Order by ASC => index kecil ke besar
 // Order by DESC => index besar ke kecil
-$mahasiswa = query("SELECT * FROM mahasiswa");
+$mahasiswa = query("SELECT * FROM produk");
 
 // jika tombol cari di klik, kita timpa data $mahasiswa dengan query baru sesuai dengan kebutuhan
 if(isset($_POST["cari"])) {
@@ -44,9 +44,12 @@ if(isset($_POST["cari"])) {
             <th>No</th>
             <th>Aksi</th>
             <th>Nama</th>
-            <th>NIM</th>
-            <th>Jurusan</th>
+            <th>Deskrips</th>
+            <th>Harga</th>
+            <th>Warna</th>
+            <th>Ukuran</th>
             <th>Gambar</th>
+
         </tr>
         <?php 
         // inisialisasi penomoran agar jika ada data yang dihapus, nomornya tidak auto increment tetapi menyesuaikan jumlah baris
@@ -57,13 +60,15 @@ if(isset($_POST["cari"])) {
         <tr>
             <td><?= $i; ?></td>
             <td>
-                <a href="update.php?id=<?= $mhs["No"]; ?>" onclick="return confirm('Apakah anda yakin?')">ubah</a> |
-                <a href="delete.php?id=<?= $mhs["No"]; ?>" onclick="return confirm('Apakah anda yakin?')">hapus</a>
+                <a href="update.php?id=<?= $mhs["id_produk"]; ?>" onclick="return confirm('Apakah anda yakin?')">ubah</a> |
+                <a href="delete.php?id=<?= $mhs["id_produk"]; ?>" onclick="return confirm('Apakah anda yakin?')">hapus</a>
             </td>
-            <td><?= $mhs["Nama"]; ?></td>
-            <td><?= $mhs["NIM"]; ?></td>
-            <td><?= $mhs["Jurusan"]; ?></td>
-            <td><img src="img/<?= $mhs["Gambar"]; ?>" alt=""></td>
+            <td><?= $mhs["nama_produk"]; ?></td>
+            <td><?= $mhs["deskripsi"]; ?></td>
+            <td><?= $mhs["harga"]; ?></td>
+            <td><?= $mhs["warna"]; ?></td>
+            <td><?= $mhs["ukuran"]; ?></td>
+            <td><?= $mhs["Gambar"]; ?></td>
         </tr>
         <?php 
         $i++;
