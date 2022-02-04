@@ -1,4 +1,19 @@
 <?php
+
+function query($query) {
+    // koneksi php ke sql
+    $connection = mysqli_connect("localhost", "root", "", "sqldasar");
+    // ambil data sql dan disimpan ke variable
+    $result = mysqli_query($connection, $query);
+    // masukkan data sql ke var rows dengan perulangan
+    $rows = [];
+    while($row = mysqli_fetch_assoc($result)) {
+        // data perulangan di dalam $row diappend ke $rows
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
 function ubah($method) {
     $connection = mysqli_connect("localhost", "root", "", "sqldasar");
 
