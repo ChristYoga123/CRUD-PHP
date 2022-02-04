@@ -10,7 +10,7 @@ $connection = mysqli_connect("localhost", "root", "", "sqldasar");
 // ambil data database dari id yang sudah di GET.
 $id = $_GET["id"];
 // diberi [0] karena sebenarnya fungsi query ini mengembalikan array numerik baru di dalamnya ada array associative jadi harus dibuka dulu.
-$mhs = query("SELECT * FROM mahasiswa WHERE No = $id")[0];
+$mhs = query("SELECT * FROM produk WHERE id_produk = $id")[0];
 
 //cek apakah tombol submit sudah ditekan atau belum
 if(isset($_POST["submit"])) {
@@ -43,18 +43,26 @@ if(isset($_POST["submit"])) {
     <form action="" method="post" enctype="multipart/form-data">
         <ul>
             <!-- membuat input hidden lalu dipost agar array dari id ini masuk ke function -->
-            <input type="hidden" name="id" value="<?=$mhs['No']?>">
+            <input type="hidden" name="id" value="<?=$mhs['id_produk']?>">
             <li>
                 <label for="Nama">Nama: </label>
-                <input type="text" name="Nama" id="Nama" required value="<?=$mhs['Nama']?>">
+                <input type="text" name="Nama" id="Nama" required value="<?=$mhs['nama_produk']?>">
             </li>
             <li>
-                <label for="NIM">NIM: </label>
-                <input type="text" name="NIM" id="NIM" required value="<?=$mhs['NIM']?>">
+                <label for="NIM">Desk: </label>
+                <input type="text" name="NIM" id="NIM" required value="<?=$mhs['deskripsi']?>">
             </li>
             <li>
-                <label for="Jurusan">Jurusan: </label>
-                <input type="text" name="Jurusan" id="Jurusan" required value="<?=$mhs['Jurusan']?>">
+                <label for="Jurusan">Harga: </label>
+                <input type="text" name="Jurusan" id="Jurusan" required value="<?=$mhs['harga']?>">
+            </li>
+            <li>
+                <label for="Jurusan">Warna: </label>
+                <input type="text" name="Jurusan" id="Jurusan" required value="<?=$mhs['warna']?>">
+            </li>
+            <li>
+                <label for="Jurusan">Ukuran: </label>
+                <input type="text" name="Jurusan" id="Jurusan" required value="<?=$mhs['ukuran']?>">
             </li>
             <li>
                 <label for="Gambar">Gambar: </label>
